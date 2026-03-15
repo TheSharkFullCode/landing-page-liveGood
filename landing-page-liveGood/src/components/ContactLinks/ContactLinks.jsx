@@ -8,9 +8,24 @@ const socialLinksData = [
   // TODO: reemplazar con URL real
   { name: 'YouTube', icon: '▶️', url: '#', handle: 'LiveGood TV' },
   // TODO: reemplazar con URL real
-  { name: 'WhatsApp', icon: '💬', url: '#', handle: 'Chat Directo' },
+  { name: 'WhatsApp', icon: '💬', url: '#', handle: 'Chat Directo,' },
   // TODO: reemplazar con URL real
   { name: 'Telegram', icon: '✈️', url: '#', handle: 'Grupo LiveGood' },
+]
+
+const videosData = [
+  {
+    id: 'video1',
+    title: 'LiveGood — Viajes y Comunidad Global',
+    description: 'Miembros de todo el mundo viajando, celebrando y ganando juntos.',
+    youtubeId: 'PENDIENTE',
+  },
+  {
+    id: 'video2',
+    title: 'La vida que LiveGood hace posible',
+    description: 'Libertad financiera real, viajes increíbles y una comunidad que te impulsa.',
+    youtubeId: 'PENDIENTE',
+  },
 ]
 
 function ContactLinks() {
@@ -25,6 +40,33 @@ function ContactLinks() {
             Síguenos en redes sociales y mantente al día con las últimas novedades,
             productos y oportunidades de LiveGood.
           </p>
+        </div>
+
+        <div className="contact-links__videos">
+          {videosData.map(video => (
+            <div key={video.id} className="contact-links__video-card">
+              <div className="contact-links__video-embed">
+                {video.youtubeId === 'PENDIENTE' ? (
+                  <div className="contact-links__video-placeholder">
+                    <div className="contact-links__video-play">▶</div>
+                    <p className="contact-links__video-coming">Vídeo próximamente</p>
+                  </div>
+                ) : (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                    title={video.title}
+                    style={{border: 'none'}}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                )}
+              </div>
+              <div className="contact-links__video-info">
+                <h4 className="contact-links__video-title">{video.title}</h4>
+                <p className="contact-links__video-desc">{video.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="contact-links__social-grid">
