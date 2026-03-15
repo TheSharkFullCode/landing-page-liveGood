@@ -26,10 +26,11 @@ function Header() {
 
         <nav className="header__nav">
           <ul className="header__nav-list">
-            <li><a href="#inicio"       className="header__nav-link">Inicio</a></li>
-            <li><a href="#productos"    className="header__nav-link">Productos</a></li>
-            <li><a href="#videos"       className="header__nav-link">Vídeos</a></li>
-            <li><a href="#como-empezar" className="header__nav-link">Empezar</a></li>
+            <li><a href="#inicio"         className="header__nav-link">Inicio</a></li>
+            <li><a href="#quienes-somos" className="header__nav-link">Quiénes Somos</a></li>
+            <li><a href="#productos"     className="header__nav-link">Productos</a></li>
+            <li><a href="#videos"        className="header__nav-link">Vídeos</a></li>
+            <li><a href="#como-empezar"  className="header__nav-link">Empezar</a></li>
           </ul>
         </nav>
 
