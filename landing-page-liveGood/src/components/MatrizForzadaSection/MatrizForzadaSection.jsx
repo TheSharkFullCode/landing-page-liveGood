@@ -63,7 +63,7 @@ function MatrizForzadaSection() {
           <div className="matriz-forzada__precio">
             <p className="matriz-forzada__precio-label">Todo esto por solo</p>
             <p className="matriz-forzada__precio-amount">$9.95 <span>/mes</span></p>
-            <p className="matriz-forzada__precio-sub">Sin permanencia. Sin sorpresas.</p>
+            <p className="matriz-forzada__precio-sub">Registro único $40 · $9.95/mes · Cancela cuando quieras.</p>
           </div>
 
           <div className="matriz-forzada__credibilidad">

@@ -67,7 +67,7 @@ function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p className="footer__copyright">© 2025 LiveGood. Todos los derechos reservados.</p>
+          <p className="footer__copyright">© 2026 Tesla Ramona Rodríguez · LiveGood</p>
           <div className="footer__legal-links">
             <a href="#" className="footer__legal-link">Política de Privacidad</a>
             <a href="#" className="footer__legal-link">Términos de Uso</a>

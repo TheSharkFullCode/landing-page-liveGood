@@ -49,6 +49,10 @@ function OwnerSection() {
             </p>
 
             <p className="owner-section__text">
+              LiveGood nació en 2022 con una misión clara: productos de salud premium al precio de coste, sin intermediarios. Hoy cuenta con más de 2 millones de miembros en más de 240 países y ha pagado más de 29 millones de dólares en comisiones. No es una promesa — es un sistema que ya funciona.
+            </p>
+
+            <p className="owner-section__text">
               Lo que me convenció fue la matriz forzada. No dependes solo de lo que tú
               vendas — cuando LiveGood crece globalmente, tú te beneficias. Es el único
               modelo que he visto donde el sistema trabaja aunque tú no estés al volante.

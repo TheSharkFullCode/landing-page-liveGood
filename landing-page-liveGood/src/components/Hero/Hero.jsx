@@ -15,7 +15,7 @@ function Hero() {
         <p className="hero__subtitle">
           No necesitas experiencia ni vender puerta a puerta. LiveGood tiene una{' '}
           <strong>matriz forzada</strong>: cuando la empresa crece, tú cobras.{' '}
-          <strong>Por $9.95 al mes.</strong>
+          <strong>Por $9.95 al mes tras un registro único de $40.</strong>
         </p>
 
         <p className="hero__secondary-text">
@@ -37,7 +37,7 @@ function Hero() {
           </a>
         </div>
 
-        <p className="hero__cta-note">Sin compromiso · Acceso inmediato · 100% gratis</p>
+        <p className="hero__cta-note">Registro único $40 · Membresía $9.95/mes · Sin permanencia</p>
 
       </div>
     </section>
