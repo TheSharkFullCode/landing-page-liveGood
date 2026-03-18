@@ -1,7 +1,7 @@
 [build]
   base = "landing-page-liveGood"
   command = "npm run build"
-  publish = "landing-page-liveGood/dist"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
