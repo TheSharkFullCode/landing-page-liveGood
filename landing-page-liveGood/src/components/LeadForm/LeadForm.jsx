@@ -1,8 +1,12 @@
 import { useState } from 'react'
 
+const ML_TOKEN = 'REMOVED_SECRET'
+const ML_GROUP = '182395623098549820'
+
 function LeadForm() {
   const [formData, setFormData] = useState({ nombre: '', email: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const handleChange = (e) => {
@@ -10,15 +14,38 @@ function LeadForm() {
     if (error) setError('')
   }
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!formData.nombre.trim() || !formData.email.trim()) {
       setError('Por favor rellena todos los campos')
       return
     }
-    // TODO: conectar con CRM / email marketing (ej. MailerLite)
+
     setError('')
-    setSubmitted(true)
-    setFormData({ nombre: '', email: '' })
+    setLoading(true)
+
+    try {
+      const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${ML_TOKEN}`,
+        },
+        body: JSON.stringify({
+          email: formData.email.trim(),
+          fields: { name: formData.nombre.trim() },
+          groups: [ML_GROUP],
+        }),
+      })
+
+      if (!res.ok) throw new Error('MailerLite error')
+
+      setSubmitted(true)
+      setFormData({ nombre: '', email: '' })
+    } catch {
+      setError('Ha ocurrido un error. Por favor inténtalo de nuevo.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -81,7 +108,7 @@ function LeadForm() {
           {/* Fila 2 — inputs + botón o mensaje */}
           {submitted ? (
             <p className="lead-form__bar-success">
-              ¡Guía enviada a tu email! Revisa tu bandeja de entrada 🎉
+              ¡Gracias {formData.nombre || ''}! 🎉 Revisa tu email — te hemos enviado un enlace de confirmación. ¡Hasta pronto!
             </p>
           ) : (
             <>
@@ -94,6 +121,7 @@ function LeadForm() {
                   value={formData.nombre}
                   onChange={handleChange}
                   autoComplete="given-name"
+                  disabled={loading}
                 />
                 <input
                   type="email"
@@ -103,13 +131,15 @@ function LeadForm() {
                   value={formData.email}
                   onChange={handleChange}
                   autoComplete="email"
+                  disabled={loading}
                 />
                 <button
                   type="button"
                   className="lead-form__bar-btn"
                   onClick={handleClick}
+                  disabled={loading}
                 >
-                  Quiero la guía
+                  {loading ? 'Enviando...' : 'Quiero la guía'}
                 </button>
               </div>
               {error && <p className="lead-form__bar-error">{error}</p>}
