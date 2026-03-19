@@ -8,6 +8,7 @@ function LeadForm() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [nombreGuardado, setNombreGuardado] = useState('')
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -24,6 +25,7 @@ function LeadForm() {
     setLoading(true)
 
     try {
+      console.log('Enviando a MailerLite:', formData.email, formData.nombre)
       const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
         method: 'POST',
         headers: {
@@ -34,11 +36,16 @@ function LeadForm() {
           email: formData.email.trim(),
           fields: { name: formData.nombre.trim() },
           groups: [ML_GROUP],
+          status: 'active',
         }),
       })
+      console.log('Respuesta status:', res.status)
+      const resBody = await res.json()
+      console.log('Respuesta body:', resBody)
 
       if (!res.ok) throw new Error('MailerLite error')
 
+      setNombreGuardado(formData.nombre.trim())
       setSubmitted(true)
       setFormData({ nombre: '', email: '' })
     } catch {
@@ -108,7 +115,7 @@ function LeadForm() {
           {/* Fila 2 — inputs + botón o mensaje */}
           {submitted ? (
             <p className="lead-form__bar-success">
-              ¡Gracias {formData.nombre || ''}! 🎉 Revisa tu email — te hemos enviado un enlace de confirmación. ¡Hasta pronto!
+              ¡Gracias {nombreGuardado}! 🎉 Hemos recibido tus datos. Tesla se pondrá en contacto contigo muy pronto.
             </p>
           ) : (
             <>
