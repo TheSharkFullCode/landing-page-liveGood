@@ -33,8 +33,12 @@ function LeadForm() {
       })
 
       if (!res.ok) {
-        const resBody = await res.json()
-        throw new Error(resBody?.message || 'Brevo error')
+        let message = 'Error del servidor'
+        try {
+          const body = await res.json()
+          message = body?.message || message
+        } catch { /* cuerpo vacío o no-JSON */ }
+        throw new Error(message)
       }
 
       setNombreGuardado(formData.nombre.trim())
