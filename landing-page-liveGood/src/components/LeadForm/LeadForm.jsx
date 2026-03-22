@@ -110,9 +110,14 @@ function LeadForm() {
 
           {/* Fila 2 — inputs + botón o mensaje */}
           {submitted ? (
-            <p className="lead-form__bar-success">
-              ¡Gracias {nombreGuardado}! 🎉 Hemos recibido tus datos. Tesla se pondrá en contacto contigo muy pronto.
-            </p>
+            <>
+              <p className="lead-form__bar-success">
+                ¡Gracias {nombreGuardado}! 🎉 Hemos recibido tus datos. Tesla se pondrá en contacto contigo muy pronto.
+              </p>
+              <p className="lead-form__bar-spam-note">
+                📩 Revisa tu bandeja de spam o correo no deseado si no ves el email en unos minutos.
+              </p>
+            </>
           ) : (
             <>
               <div className="lead-form__bar-form">

@@ -926,6 +926,12 @@ h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; }
   color: #a5b4fc;
 }
 
+.lead-form__bar-spam-note {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 6px;
+}
+
 .lead-form__bar-error {
   font-size: 0.8rem;
   font-weight: 500;
