@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-const ML_TOKEN = 'REMOVED_SECRET'
-const ML_GROUP = '182395623098549820'
+const BREVO_LIST_ID = 3
+const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY
 
 function LeadForm() {
   const [formData, setFormData] = useState({ nombre: '', email: '' })
@@ -25,25 +25,24 @@ function LeadForm() {
     setLoading(true)
 
     try {
-      console.log('Enviando a MailerLite:', formData.email, formData.nombre)
-      const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      const res = await fetch('https://api.brevo.com/v3/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${ML_TOKEN}`,
+          'api-key': BREVO_API_KEY,
         },
         body: JSON.stringify({
           email: formData.email.trim(),
-          fields: { name: formData.nombre.trim() },
-          groups: [ML_GROUP],
-          status: 'active',
+          attributes: { FIRSTNAME: formData.nombre.trim() },
+          listIds: [BREVO_LIST_ID],
+          updateEnabled: true,
         }),
       })
-      console.log('Respuesta status:', res.status)
-      const resBody = await res.json()
-      console.log('Respuesta body:', resBody)
 
-      if (!res.ok) throw new Error('MailerLite error')
+      if (!res.ok) {
+        const resBody = await res.json()
+        throw new Error(resBody?.message || 'Brevo error')
+      }
 
       setNombreGuardado(formData.nombre.trim())
       setSubmitted(true)
