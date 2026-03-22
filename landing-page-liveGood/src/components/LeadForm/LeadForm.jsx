@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-const BREVO_LIST_ID = 3
-const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY
 
 function LeadForm() {
   const [formData, setFormData] = useState({ nombre: '', email: '' })
@@ -25,17 +23,12 @@ function LeadForm() {
     setLoading(true)
 
     try {
-      const res = await fetch('https://api.brevo.com/v3/contacts', {
+      const res = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'api-key': BREVO_API_KEY,
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          nombre: formData.nombre.trim(),
           email: formData.email.trim(),
-          attributes: { FIRSTNAME: formData.nombre.trim() },
-          listIds: [BREVO_LIST_ID],
-          updateEnabled: true,
         }),
       })
 
