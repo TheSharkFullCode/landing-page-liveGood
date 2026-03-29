@@ -99,12 +99,12 @@ function LeadForm() {
 
           {/* Fila 1 — texto descriptivo */}
           <div className="lead-form__bar-teaser">
-            <span className="lead-form__bar-badge">EXCLUSIVO</span>
+            <span className="lead-form__bar-badge">GRATIS</span>
             <div>
               <p className="lead-form__bar-hook">
-                ¿Quieres saber exactamente cómo funciona por dentro?
+                ¿Quieres ver cómo funciona LiveGood por dentro y cuánto puedes ganar?
               </p>
-              <p className="lead-form__bar-sub">Descarga gratis y descúbrelo tú mismo</p>
+              <p className="lead-form__bar-sub">Déjanos tu nombre y email — te lo contamos todo, sin compromiso</p>
             </div>
           </div>
 
@@ -147,7 +147,7 @@ function LeadForm() {
                   onClick={handleClick}
                   disabled={loading}
                 >
-                  {loading ? 'Enviando...' : 'Quiero la guía'}
+                  {loading ? 'Enviando...' : 'Quiero saber más →'}
                 </button>
               </div>
               {error && <p className="lead-form__bar-error">{error}</p>}
