@@ -61,6 +61,7 @@ body {
   background-color: var(--bg-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; }
@@ -472,6 +473,7 @@ h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; }
 }
 
 @media (max-width: 768px) { .products__grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .products__card-pricing { grid-template-columns: 1fr; } }
 
 /* =============================================
    4. VIDEO SECTION — gradient #0a0a0a → #052e16
@@ -1453,9 +1455,94 @@ h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; }
   box-shadow: var(--shadow-hover);
 }
 
+.contact-links__mock-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 16px;
+  padding: 40px 48px;
+  max-width: 860px;
+  width: 100%;
+  margin: 32px auto;
+}
+
+.contact-links__mock-label {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.contact-links__mock-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.contact-links__mock-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.contact-links__mock-field-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-links__mock-input {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 14px 16px;
+  color: #333333;
+  font-size: 1rem;
+  pointer-events: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-links__mock-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.contact-links__mock-btn {
+  background: linear-gradient(to right, #c0392b, #e74c3c);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  margin-top: 8px;
+  box-shadow: 0 4px 16px rgba(231, 76, 60, 0.40);
+  pointer-events: none;
+  cursor: default;
+}
+
+.contact-links__mock-secure {
+  color: #475569;
+  font-size: 0.72rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .contact-links__cta-box { padding: 36px 20px; }
   .contact-links__steps { grid-template-columns: 1fr; }
+  .contact-links__mock-fields { grid-template-columns: 1fr; }
 }
 
 .contact-links__videos {

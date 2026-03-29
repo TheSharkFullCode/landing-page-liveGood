@@ -138,7 +138,7 @@ function ContactLinks() {
         {/* CTA box */}
         <div id="unete" className="contact-links__cta-box">
           <h3 className="contact-links__cta-title">
-            ¿Cómo me uno a LiveGood? Es más fácil de lo que crees
+            ¿Cómo me registro en LiveGood? Es más fácil de lo que crees
           </h3>
           <p className="contact-links__cta-subtitle">
             En menos de 5 minutos ya formas parte. Aquí te explicamos exactamente qué va a pasar:
@@ -166,6 +166,50 @@ function ContactLinks() {
               </div>
             </div>
           </div>
+
+          {/* Formulario decorativo */}
+          <div className="contact-links__mock-form">
+            <p className="contact-links__mock-label">Así de fácil — así se ve tu registro:</p>
+            <div className="contact-links__mock-fields">
+              <div className="contact-links__mock-field">
+                <label className="contact-links__mock-field-label">First Name</label>
+                <input
+                  className="contact-links__mock-input"
+                  type="text"
+                  defaultValue="María"
+                  readOnly
+                  tabIndex={-1}
+                />
+              </div>
+              <div className="contact-links__mock-field">
+                <label className="contact-links__mock-field-label">Last Name</label>
+                <input
+                  className="contact-links__mock-input"
+                  type="text"
+                  defaultValue="González"
+                  readOnly
+                  tabIndex={-1}
+                />
+              </div>
+              <div className="contact-links__mock-field">
+                <label className="contact-links__mock-field-label">Email</label>
+                <input
+                  className="contact-links__mock-input"
+                  type="text"
+                  defaultValue="maria@gmail.com"
+                  readOnly
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div className="contact-links__mock-btn-wrap">
+              <button type="button" className="contact-links__mock-btn">
+                RESERVE MY POSITION NOW!
+              </button>
+              <p className="contact-links__mock-secure">🔒 Conexión segura · Sin tarjeta de crédito</p>
+            </div>
+          </div>
+
           <a
             href={CTA_URL}
             className="contact-links__cta-button"
