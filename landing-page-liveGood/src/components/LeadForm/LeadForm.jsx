@@ -95,7 +95,7 @@ function LeadForm() {
         </div>
 
         {/* ── Parte inferior: barra de formulario ── */}
-        <div className="lead-form__bar">
+        <div id="registro" className="lead-form__bar">
 
           {/* Fila 1 — texto descriptivo */}
           <div className="lead-form__bar-teaser">
