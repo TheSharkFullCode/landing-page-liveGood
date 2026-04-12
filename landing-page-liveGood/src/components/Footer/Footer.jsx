@@ -10,37 +10,30 @@ function Footer() {
               Live<span className="footer__logo-accent">Good</span>
             </span>
             <p className="footer__brand-description">
-              Transformando vidas a través de productos de salud premium y oportunidades
-              de negocio sin igual en más de 190 países.
+              Transformando vidas a través de productos de salud premium y oportunidades de negocio globales.
             </p>
-          </div>
-
-          <div className="footer__links-group">
-            <h4 className="footer__links-title">Empresa</h4>
-            <ul className="footer__links-list">
-              <li><a href="#" className="footer__link">Sobre Nosotros</a></li>
-              <li><a href="#" className="footer__link">Misión y Visión</a></li>
-              <li><a href="#" className="footer__link">Liderazgo</a></li>
-              <li><a href="#" className="footer__link">Noticias</a></li>
-            </ul>
           </div>
 
           <div className="footer__links-group">
             <h4 className="footer__links-title">Productos</h4>
             <ul className="footer__links-list">
-              <li><a href="#" className="footer__link">Suplementos</a></li>
-              <li><a href="#" className="footer__link">CBD</a></li>
-              <li><a href="#" className="footer__link">Café</a></li>
-              <li><a href="#" className="footer__link">Todos los Productos</a></li>
+              <li><a href="#productos" className="footer__link">Nuestros Suplementos</a></li>
+              <li><a href="#video-seccion" className="footer__link">Presentación de Productos</a></li>
             </ul>
           </div>
 
           <div className="footer__links-group">
             <h4 className="footer__links-title">Negocio</h4>
             <ul className="footer__links-list">
-              <li><a href="#" className="footer__link">Plan de Compensación</a></li>
-              <li><a href="#" className="footer__link">Cómo Funciona</a></li>
-              <li><a href="#" className="footer__link">Testimonios</a></li>
+              <li><a href="#formulario" className="footer__link">Plan de Compensación</a></li>
+              <li><a href="#video-seccion" className="footer__link">Cómo Funciona</a></li>
+              <li><a href="#testimonios" className="footer__link">Testimonios Reales</a></li>
+            </ul>
+          </div>
+
+          <div className="footer__links-group">
+            <h4 className="footer__links-title">Acceso rápido</h4>
+            <ul className="footer__links-list">
               <li>
                 <a
                   href="https://www.securemyposition.com/"
@@ -69,9 +62,7 @@ function Footer() {
         <div className="footer__bottom">
           <p className="footer__copyright">© 2026 Tesla Ramona Rodríguez · LiveGood</p>
           <div className="footer__legal-links">
-            <a href="#" className="footer__legal-link">Política de Privacidad</a>
-            <a href="#" className="footer__legal-link">Términos de Uso</a>
-            <a href="#" className="footer__legal-link">Aviso Legal</a>
+            <span className="footer__legal-text">Bienestar y Libertad Financiera</span>
           </div>
         </div>
 
